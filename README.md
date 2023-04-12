@@ -1,1 +1,4 @@
-# PY-Entrega3
+# proyecto-django
+
+generar venv
+crear proyecto django

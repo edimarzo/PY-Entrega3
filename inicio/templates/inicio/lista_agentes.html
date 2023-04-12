@@ -1,0 +1,30 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+<title>Agentes</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Listado de Agentes</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+<p>
+    <form action={% url 'inicio:listar_agente' %}>
+        {{formulario}}
+        <button>Buscar</button>
+    </form>
+</p>
+
+{% if agentes %}
+    {% for agente in agentes %}
+    <li>
+        Nombre: {{agente.nombre}} - Apellido: {{agente.apellido}} - Legajo: {{agente.legajo}} - Legajo: {{agente.fecha_nacimiento}}
+    </li>
+    {% endfor %}
+
+{% else %}
+    <h2>No hay datos sobre agentes por el momento.</h2>
+{% endif %}
+{% endblock contenido %}
